@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Meadows Invitation</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f2e8;font-family:'DM Sans',system-ui,sans-serif;color:#2b2b24;-webkit-text-size-adjust:100%}
+button{font-family:'DM Sans',system-ui,sans-serif;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 844px; box-sizing: border-box; background: #f6f2e8; padding: 16px 20px 56px; display: flex; flex-direction: column; gap: 28px">
+
+<nav aria-label="Invitation sections" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 5px; background: #ebe4d2; border-radius: 14px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+</sc-for>
+</nav>
+
+<!-- ============ INVITATIONAL ============ -->
+<sc-if value="{{ isInvite }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 20px">
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0; text-align: center">
+<img src="./assets/25731557f5cef7140559ff59dbacdee0.png" alt="A pine tree on a small golf green with a sand bunker and flag" style="width: 210px; height: auto; display: block">
+<div style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 68px; line-height: 1; color: #22362a; margin-top: 4px">The Meadows</div>
+<div style="font-size: 12px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: #4f6b4a; margin-top: 10px; padding-left: 0.32em">Invitational</div>
+</div>
+
+<div style="height: 1px; background: #cfc8b4; margin: 4px 24px"></div>
+
+<div style="background: #2f4a34; border-radius: 22px; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; height: 109px">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #dcc9a0">Saturday</div><div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 46px; line-height: 1.1; color: #fbf7ec; width: 229px; height: 45px">October 17</div>
+
+<div style="font-size: 18px; font-weight: 600; color: #fbf7ec">Stroke play tees off 10:00 AM</div><div style="font-size: 14px; color: #dcc9a0">Practice rounds open 9:00</div><div style="width: 44px; height: 1px; background: #8fa08a; margin: 8px 0"></div>
+
+
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="background: #ebe4d2; border: 1px solid #d3ccb6; border-radius: 18px; padding: 18px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #566d47">RSVP by</div>
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; line-height: 1.15; color: #22362a">October 4</div>
+<div style="font-size: 13.5px; line-height: 1.4; color: #5a5a4a">Capped at 16 players.</div>
+</div>
+<div style="background: #22362a; border-radius: 18px; padding: 18px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #dcc9a0">Buy-in</div>
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; line-height: 1.15; color: #fbf7ec">$30</div>
+<div style="font-size: 13.5px; line-height: 1.4; color: #e6dfc9">Per player · golf, food, drinks &amp; award.</div>
+</div>
+</div>
+
+<div style="text-align: center; font-family: 'Caveat', cursive; font-weight: 600; font-size: 34px; line-height: 1.1; color: #4f6b4a; margin-top: 4px">Do you have what it takes?</div>
+<div style="text-align: center; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #6b6a58; line-height: 1.5">845 Sciomeadow Dr, Ann Arbor MI 48103</div>
+
+<div style="height: 1px; background: #cfc8b4; margin: 16px 0 4px"></div>
+
+<!-- About the Event -->
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">About the Event</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">The inaugural invitational at The Meadows — the first tournament of its kind, held in the yard of 845 Sciomeadow Drive. Expect a light-hearted, competitive afternoon on a course built from years of overgrowth transformed by a couple shovels, a rake, a new mowing pattern, and a few strategically placed buckets. What started as a backyard dream is becoming something unique — come experience it for yourself — and if you have what it takes, walk away as a champion.</div>
+</div>
+
+<div style="height: 1px; background: #cfc8b4; margin: 4px 0"></div>
+
+<!-- The Day -->
+<div style="display: flex; align-items: center; gap: 14px">
+<img src="./assets/25731557f5cef7140559ff59dbacdee0.png" alt="" style="width: 64px; height: auto; display: block">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #566d47">The Meadows Invitational</div>
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 32px; line-height: 1.1; color: #22362a">The Day</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6b6a58">The Format</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 16px; padding: 18px 16px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; gap: 14px; align-items: flex-start">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 14px; background: #2f4a34; color: #fbf7ec; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</div>
+<div style="display: flex; flex-direction: column; gap: 3px">
+<div style="font-size: 16px; font-weight: 700; color: #22362a">Stroke Play</div>
+<div style="font-size: 14.5px; line-height: 1.45; color: #4a4a3c">All 6 holes, one loop. Total strokes set the bracket seed.</div>
+</div>
+</div>
+<div style="display: flex; gap: 14px; align-items: flex-start">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 14px; background: #2f4a34; color: #fbf7ec; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">2</div>
+<div style="display: flex; flex-direction: column; gap: 3px">
+<div style="font-size: 16px; font-weight: 700; color: #22362a">Match Play Bracket</div>
+<div style="font-size: 14.5px; line-height: 1.45; color: #4a4a3c">Single-elimination, seeded 1–16. Full 6-hole head-to-head, every round.</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6b6a58">Schedule</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 16px; padding: 4px 16px; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e8e1cf; font-size: 15px; color: #3a3a30"><span>Practice rounds open</span><span>9:00</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e8e1cf; font-size: 15px; color: #3a3a30"><span>Stroke play — seeding</span><span>10:00</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e8e1cf; font-size: 15px; color: #3a3a30"><span>Round of 16</span><span>11:30</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e8e1cf; font-size: 15px; color: #3a3a30"><span>Quarterfinals</span><span>1:15</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e8e1cf; font-size: 15px; color: #3a3a30"><span>Semifinals</span><span>3:00</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; font-size: 15px; font-weight: 700; color: #22362a"><span>Championship match</span><span>4:30</span></div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6b6a58">House Rules</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 16px; padding: 18px 16px; display: flex; flex-direction: column; gap: 14px; font-size: 14.5px; line-height: 1.45; color: #3a3a30">
+<div style="display: flex; gap: 12px"><span style="color: #a8691f; font-weight: 700">—</span><span>No handicaps.</span></div>
+<div style="display: flex; gap: 12px"><span style="color: #a8691f; font-weight: 700">—</span><span>Play it as it lies.</span></div>
+<div style="display: flex; gap: 12px"><span style="color: #a8691f; font-weight: 700">—</span><span>Gimmes inside the grip. No exceptions, no arguments.</span></div>
+<div style="display: flex; gap: 12px"><span style="color: #a8691f; font-weight: 700">—</span><span>Stroke play ties: closest-to-the-pin playoff on Hole 6, sudden death if still tied.</span></div>
+<div style="display: flex; gap: 12px"><span style="color: #a8691f; font-weight: 700">—</span><span>Match play ties: sudden death starting on Hole 1.</span></div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 8px">
+<div style="text-align: center; font-family: 'Caveat', cursive; font-weight: 600; font-size: 34px; line-height: 1.1; color: #4f6b4a">Next Up:</div>
+<button type="button" onClick="{{ goPerch }}" style="min-height: 52px; padding: 12px 20px; background: #7c3e4f; color: #fbf7ec; border: 0; border-radius: 14px; font-size: 16px; font-weight: 600">The Perch</button>
+<button type="button" onClick="{{ goGuide }}" style="min-height: 52px; padding: 12px 20px; background: #2f4a34; color: #fbf7ec; border: 0; border-radius: 14px; font-size: 16px; font-weight: 600">The Golf Guide</button>
+</div>
+
+</div>
+</sc-if>
+
+<!-- ============ THE PERCH ============ -->
+<sc-if value="{{ isPerch }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 22px">
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center">
+<img src="./assets/25731557f5cef7140559ff59dbacdee0.png" alt="A pine tree on a small golf green with a sand bunker and flag" style="width: 210px; height: auto; display: block">
+<div style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 68px; line-height: 1; color: #22362a; margin-top: 4px">The Perch</div>
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: #7c3e4f; margin-top: 10px; padding-left: 0.32em">At The Meadows</div>
+</div>
+
+<div style="text-align: center; font-size: 17px; line-height: 1.55; color: #33332a; padding: 0 4px">While the guys spend the day convincing themselves a foam ball golf course is a real sport, you’ll be on the patio with bubbles in hand — <strong style="color: #7c3e4f; font-weight: 700">free to heckle every excuse they invent</strong> when they actually show you what type of golfer they are.</div>
+
+<div style="text-align: center; font-family: 'Caveat', cursive; font-weight: 600; font-size: 34px; line-height: 1.1; color: #7c3e4f">Wine. Dine. Talk plenty of smack.</div>
+
+<div style="background: #7c3e4f; border-radius: 22px; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #f0d3d9">Saturday</div>
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 52px; line-height: 1.1; color: #ffffff">October 17</div>
+<div style="width: 44px; height: 1px; background: #c99aa6; margin: 8px 0"></div>
+<div style="font-size: 18px; font-weight: 600; color: #ffffff">The Perch opens 10:00 AM</div>
+<div style="font-size: 14px; color: #f3dfe3">Championship match at 4:30</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="background: #ebe4d2; border: 1px solid #d3ccb6; border-radius: 18px; padding: 18px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #566d47">RSVP by</div>
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; line-height: 1.15; color: #22362a">Oct 4</div>
+<div style="font-size: 13.5px; line-height: 1.4; color: #5a5a4a">So we know how many glasses to chill.</div>
+</div>
+<div style="background: #7c3e4f; border-radius: 18px; padding: 18px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #f0d3d9">On the Perch</div>
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; line-height: 1.15; color: #ffffff">Bubbles</div>
+<div style="font-size: 13.5px; line-height: 1.4; color: #f6e6e9">Food &amp; drinks, compliments of the house.</div>
+</div>
+</div>
+
+<div style="text-align: center; font-family: 'Caveat', cursive; font-weight: 600; font-size: 34px; line-height: 1.1; color: #7c3e4f; margin-top: 6px">Come spend a day at The Meadows.</div>
+<button type="button" onClick="{{ goGuide }}" style="min-height: 48px; padding: 12px 20px; background: #7c3e4f; color: #fbf7ec; border: 0; border-radius: 14px; font-size: 15px; font-weight: 600">Next: the golf guide</button>
+
+</div>
+</sc-if>
+
+<!-- ============ GOLF GUIDE ============ -->
+<sc-if value="{{ isGuide }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 26px">
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<img src="./assets/25731557f5cef7140559ff59dbacdee0.png" alt="A pine tree on a small golf green with a sand bunker and flag" style="width: 120px; height: auto; display: block">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: #8a5a1c; padding-left: 0.3em">Golf Guide</div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 20px; line-height: 1.45; color: #2f4a34">Six holes, one club, and just enough pressure to make a two-footer feel like a major championship.</div>
+<div style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 26px; line-height: 1.1; color: #4f6b4a">Come to be present. Leave with a story.</div>
+</div>
+
+<div style="height: 1px; background: #cfc8b4"></div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">Welcome to The Meadows</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">A space where focus and relaxation intersect. Where you can be present, play your game, and still be a decent human being about it — mostly. Simple, but elevated. Inclusive, yet highly competitive. Judgment-free, but filled with good banter.</div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">That’s the whole idea. Everything below just explains how to play it.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">Play Over Perfection</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">The scorecard matters. It’s just not the point. The Meadows isn’t built to protect your handicap or groove the technically correct swing — it’s built for the shot you didn’t know you had in you. Curve one around the tree because you can. Try the flop shot over the woodpile just to see. Bump it off the house if that’s the line you see.</div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">Nobody’s grading your form. Nobody’s checking your setup against a textbook. If it works, you’re a genius. If it doesn’t, you’ve got a story for the next round. Out here, creativity counts for more than a clean stroke — this is a place to learn the game by playing it, not by perfecting it.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">The Course</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">Six holes, no repeats, no shortcuts, no “that one doesn’t count.” The back 3 is the stretch where the pressure mounts and the course defends itself.</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 16px; overflow: hidden; margin-top: 4px">
+<div style="background: #2f4a34; color: #fbf7ec; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-family: 'Lora', Georgia, serif; font-weight: 600; font-size: 15px"><span>The Meadows Scorecard</span><span style="font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: #dcc9a0">PAR 22</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr))">
+<div style="padding: 14px 4px; text-align: center; border-right: 1px solid #e8e1cf; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #6b6a58">HOLE 1</span><span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #22362a">4</span><span style="font-family: 'Lora', serif; font-size: 13px; color: #4a4a3c">54 yd</span></div>
+<div style="padding: 14px 4px; text-align: center; border-right: 1px solid #e8e1cf; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #6b6a58">HOLE 2</span><span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #22362a">4</span><span style="font-family: 'Lora', serif; font-size: 13px; color: #4a4a3c">75 yd</span></div>
+<div style="padding: 14px 4px; text-align: center; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #6b6a58">HOLE 3</span><span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #22362a">4</span><span style="font-family: 'Lora', serif; font-size: 13px; color: #4a4a3c">65 yd</span></div>
+<div style="padding: 14px 4px; text-align: center; border-right: 1px solid #e8e1cf; background: #ebe4d2; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #6b6a58">HOLE 4</span><span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #22362a">3</span><span style="font-family: 'Lora', serif; font-size: 13px; color: #4a4a3c">49 yd</span></div>
+<div style="padding: 14px 4px; text-align: center; border-right: 1px solid #e8e1cf; background: #ebe4d2; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #6b6a58">HOLE 5</span><span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #22362a">3</span><span style="font-family: 'Lora', serif; font-size: 13px; color: #4a4a3c">59 yd</span></div>
+<div style="padding: 14px 4px; text-align: center; background: #ebe4d2; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #6b6a58">HOLE 6</span><span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: #22362a">4</span><span style="font-family: 'Lora', serif; font-size: 13px; color: #4a4a3c">48 yd</span></div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">Equipment: One Club, One Choice</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">You get one club for the entire round — gap wedge, PW, 9-iron, or 8-iron. No swapping mid-round, no “just for this one hole.” More loft gets you more spin and a shot at being a magician around the hole, less loft trades that touch for raw distance.</div>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px">
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: #22362a">Gap Wedge</div>
+<div style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.55; color: #4a4a3c">All spin, all touch, all drama. Less distance off the tee, but around the hole you get to check it up and work it soft while everyone else watches. High-risk ego, high-reward highlight reel.</div>
+</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: #22362a">Pitching Wedge</div>
+<div style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.55; color: #4a4a3c">The middle child. Not flashy, not embarrassing. Shows up, does the job, never gives you a story to tell at the next round.</div>
+</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: #22362a">9-Iron</div>
+<div style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.55; color: #4a4a3c">Trading finesse for distance. Less spin means less control once the ball lands — great for putting real yardage behind a swing on the long holes, less great when you’re trying to finesse it stiff on the par-3s.</div>
+</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: #22362a">8-Iron</div>
+<div style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.55; color: #4a4a3c">Maximum distance, minimum mercy. Strike it clean and you look like a hero. Don’t, and the whole yard knows.</div>
+</div>
+</div>
+<div style="background: #f9efdc; border: 1.5px solid #c99a5a; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #8a5a1c">A note on the ball</div>
+<div style="font-family: 'Lora', serif; font-size: 15px; line-height: 1.55; color: #33332a">It’s foam. Feather-light, zero excuses. If it goes sideways, that one’s on the swing.</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">How to Play</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">The Invitational has money on the line, so we’re playing it closer to real golf. The course is marked, hazards are defined, and you play it as it lies. Nobody’s allowed to judge a fluffed shot — but the penalty strokes are real.</div>
+<div style="background: #fdfbf5; border: 1px solid #e3dcc8; border-radius: 16px; padding: 4px 16px; display: flex; flex-direction: column; margin-top: 4px">
+<div style="padding: 14px 0; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Lora', serif; font-weight: 600; font-size: 15.5px; color: #22362a">Fairway</span><span style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.5; color: #4a4a3c">Play it clean. No debate, no drama.</span></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Lora', serif; font-weight: 600; font-size: 15.5px; color: #22362a">Overgrown Areas</span><span style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.5; color: #4a4a3c">Marked on the course. Play it as it lies, or take an unplayable.</span></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Lora', serif; font-weight: 600; font-size: 15.5px; color: #22362a">Patio</span><span style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.5; color: #4a4a3c">Marked on the course. Play it as it lies, or take an unplayable.</span></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Lora', serif; font-weight: 600; font-size: 15.5px; color: #22362a">Bushes</span><span style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.5; color: #4a4a3c">Try to hit it out, or take an unplayable. Your call, your stroke count.</span></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Lora', serif; font-weight: 600; font-size: 15.5px; color: #22362a">Trees</span><span style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.5; color: #4a4a3c">No heroics. Take an unplayable.</span></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #e8e1cf; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Lora', serif; font-weight: 600; font-size: 15.5px; color: #22362a">Unplayable</span><span style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.5; color: #4a4a3c">One-stroke penalty. Drop within one club length of where it lay, no closer to the hole.</span></div>
+<div style="padding: 14px 0; display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Lora', serif; font-weight: 600; font-size: 15.5px; color: #22362a">Gimmes</span><span style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.5; color: #4a4a3c">Inside the grip. Pick it up. Nobody’s three-putting a two-incher for pride.</span></div>
+</div>
+<div style="background: #ebe4d2; border-radius: 14px; padding: 14px 16px; font-family: 'Lora', serif; font-style: italic; font-size: 15px; line-height: 1.55; color: #33332a">Otherwise — count every swing. Stroke play sets the bracket, then it’s match play to the final.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">Etiquette &amp; Banter</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="display: flex; gap: 12px; font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.6; color: #33332a"><span style="flex-shrink: 0; width: 7px; height: 7px; border-radius: 4px; background: #b8772a; margin-top: 10px"></span><span>Trash talk: encouraged, expected, part of the experience.</span></div>
+<div style="display: flex; gap: 12px; font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.6; color: #33332a"><span style="flex-shrink: 0; width: 7px; height: 7px; border-radius: 4px; background: #b8772a; margin-top: 10px"></span><span>Judging someone’s swing, club choice, or first-timer nerves: not allowed.</span></div>
+<div style="display: flex; gap: 12px; font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.6; color: #33332a"><span style="flex-shrink: 0; width: 7px; height: 7px; border-radius: 4px; background: #b8772a; margin-top: 10px"></span><span>A scratch player and someone holding a wedge for the first time can play the same round and both have a great time — one of them will just have more material to work with afterward.</span></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">Scorecard &amp; Standings</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.65; color: #33332a">Every stroke counted. Every score on the record. And the record absolutely will be brought up mid-round if you’re losing.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 25px; line-height: 1.2; color: #22362a">Course Care</div>
+<div style="width: 30px; height: 3px; background: #b8772a"></div>
+<div style="display: flex; gap: 12px; font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.6; color: #33332a"><span style="flex-shrink: 0; width: 7px; height: 7px; border-radius: 4px; background: #b8772a; margin-top: 10px"></span><span>Treat the holes, the yard, and the equipment like you want to play here again next weekend — because you will.</span></div>
+<div style="display: flex; gap: 12px; font-family: 'Lora', Georgia, serif; font-size: 16px; line-height: 1.6; color: #33332a"><span style="flex-shrink: 0; width: 7px; height: 7px; border-radius: 4px; background: #b8772a; margin-top: 10px"></span><span>Return your club to the rack. Return the balls to the bucket. Return your ego to a reasonable size.</span></div>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; margin-top: 8px">
+<img src="./assets/25731557f5cef7140559ff59dbacdee0.png" alt="" style="width: 150px; height: auto; display: block">
+<div style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 36px; line-height: 1.1; color: #4f6b4a">See you at The Meadows.</div>
+</div>
+
+<button type="button" onClick="{{ goCard }}" style="min-height: 48px; padding: 12px 20px; background: #2f4a34; color: #fbf7ec; border: 0; border-radius: 14px; font-size: 15px; font-weight: 600">Next: the scorecard</button>
+
+</div>
+</sc-if>
+
+<!-- ============ SCORECARD ============ -->
+<sc-if value="{{ isCard }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 22px">
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px">
+<div style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 46px; line-height: 1; color: #22362a">The Scorecard</div>
+<div style="font-size: 12px; color: #6b6a58; line-height: 1.4">Front and back of the card you’ll carry on the course.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6b6a58">Front · Scores</div>
+<div style="overflow-x: auto; border-radius: 10px; box-shadow: 0 2px 10px rgba(34, 54, 42, 0.18)">
+<img src="./assets/579a11898c74d723e5d1f9baa292fe15.png" alt="The Meadows scorecard, front: six holes with yards and par, total 350 yards and par 22, and rows for four players with their clubs" style="{{ imgStyle }}">
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6b6a58">Back · The Course</div>
+<div style="overflow-x: auto; border-radius: 10px; box-shadow: 0 2px 10px rgba(34, 54, 42, 0.18)">
+<img src="./assets/67ba16c9d00956ff4ecdc28d2509c2d8.png" alt="The Meadows scorecard, back: map of the course with four tees, three greens, numbered shot lines and yardages, a key, and the relief rules" style="{{ imgStyle }}">
+</div>
+</div>
+
+<button type="button" onClick="{{ toggleZoom }}" style="min-height: 48px; padding: 12px 20px; background: #2f4a34; color: #fbf7ec; border: 0; border-radius: 14px; font-size: 15px; font-weight: 600">{{ zoomLabel }}</button>
+
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'invite', zoom: false };
+  }
+  go(tab) {
+    this.setState({ tab: tab });
+    try { window.scrollTo(0, 0); } catch (e) {}
+  }
+  renderVals() {
+    const tab = this.state.tab;
+    const defs = [
+      { id: 'invite', label: 'The Invite' },
+      { id: 'perch', label: 'The Perch' },
+      { id: 'guide', label: 'Golf Guide' },
+      { id: 'card', label: 'Scorecard' }
+    ];
+    const base = 'min-height: 44px; padding: 0 2px; border: 0; border-radius: 10px; font-size: 13px; font-weight: 600; ';
+    const tabs = defs.map((d) => ({
+      label: d.label,
+      pick: () => this.go(d.id),
+      style: base + (tab === d.id ? 'background: #2f4a34; color: #fbf7ec;' : 'background: transparent; color: #2f4a34;')
+    }));
+    return {
+      tabs: tabs,
+      isInvite: tab === 'invite',
+      isPerch: tab === 'perch',
+      isGuide: tab === 'guide',
+      isCard: tab === 'card',
+      imgStyle: this.state.zoom ? 'width: 760px; max-width: none; height: auto; display: block' : 'width: 100%; height: auto; display: block',
+      zoomLabel: this.state.zoom ? 'Fit to screen' : 'Zoom in to read the details',
+      toggleZoom: () => this.setState({ zoom: !this.state.zoom }),
+      goPerch: () => this.go('perch'),
+      goGuide: () => this.go('guide'),
+      goCard: () => this.go('card')
+    };
+  }
+}
+</script>
+</body>
+</html>
