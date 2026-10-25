@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5efe0">
+<title>The Meadows Invitational · Recap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#2f4a2f; --pine-d:#233823; --cream:#f5efe0; --paper:#fbf7ec;
+    --wood:#7a5634; --wood-l:#b08a5e; --line:#d9ceb4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--cream);color:var(--pine-d);font-family:'Lora',Georgia,serif;font-size:18px;line-height:1.7}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+
+  header{text-align:center;padding:34px 0 6px}
+  .logo{width:140px;height:auto;mix-blend-mode:multiply;display:block;margin:0 auto 2px}
+  .script{font-family:'Caveat',cursive;font-size:30px;color:var(--wood);line-height:1}
+  h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,8.5vw,50px);line-height:1.08;margin:8px 0 12px;color:var(--pine)}
+  .meta{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--wood)}
+
+  figure.photo{margin:26px auto 0;max-width:520px}
+  figure.photo img{display:block;width:100%;height:auto;border-radius:6px;border:6px solid var(--paper);box-shadow:0 2px 14px rgba(35,56,35,.18)}
+  figure.photo figcaption{text-align:center;font-style:italic;font-size:14px;color:var(--wood);margin-top:10px}
+  .photo-missing{display:none;aspect-ratio:4/3;border:2px dashed var(--wood-l);border-radius:6px;align-items:center;justify-content:center;text-align:center;color:var(--wood);padding:20px;font-style:italic}
+  figure.photo.missing img,figure.photo.missing figcaption{display:none}
+  figure.photo.missing .photo-missing{display:flex}
+
+  .chapter{margin-top:42px}
+  .ch-label{font-family:'Caveat',cursive;font-size:26px;color:var(--wood);line-height:1}
+  h2{font-family:'Playfair Display',serif;font-weight:700;font-size:28px;line-height:1.2;color:var(--pine);margin:2px 0 14px}
+  p{margin-bottom:14px}
+
+  .champ{margin:34px 0 0;background:var(--pine);color:var(--cream);border-radius:8px;padding:20px 18px;display:flex;align-items:center;gap:16px}
+  .champ .txt{flex:1 1 0;min-width:0;text-align:left}
+  .champ .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#cdbf9a;line-height:1.5}
+  .champ .name{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,8vw,44px);line-height:1.1;margin:6px 0 0}
+  .champ .thumb{flex:0 0 52%;max-width:300px;border:0;padding:0;background:none;cursor:zoom-in;display:block}
+  .champ .thumb img{display:block;width:100%;height:auto;border-radius:4px;border:3px solid var(--paper)}
+
+  .lightbox{position:fixed;inset:0;background:rgba(20,30,20,.92);display:none;align-items:center;justify-content:center;padding:14px;z-index:10;cursor:zoom-out}
+  .lightbox.on{display:flex}
+  .lightbox img{max-width:100%;max-height:100%;border-radius:4px}
+
+  hr.rule{height:1px;background:var(--line);border:0;margin:42px 0 0}
+  footer{text-align:center;padding:30px 0 56px}
+  .btn{display:inline-block;background:var(--pine);color:var(--cream);text-decoration:none;font-family:'Playfair Display',serif;padding:12px 26px;border-radius:999px;font-size:16px}
+  .btn:active{background:var(--pine-d)}
+  footer .script{margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="logo" src="images/recap-logo.jpg" alt="The Meadows">
+    <div class="script">The Meadows</div>
+    <h1>The Inaugural Invitational</h1>
+    <div class="meta">Saturday · October 17, 2026 · Ann Arbor</div>
+  </header>
+
+  <figure class="photo" id="photo">
+    <img src="images/recap-group.jpg" alt="The group of players standing beside the signature pine and The Meadows sign" onerror="document.getElementById('photo').classList.add('missing')">
+    <div class="photo-missing">Group photo goes here.<br>Save it as images/recap-group.jpg</div>
+  </figure>
+
+  <article class="chapter">
+    <p>It was a beautiful fall Saturday in October. A light frost on the ground when the day began, and a crisp football air to set the stage for the first-ever Meadows Invitational.</p>
+    <p>Nine players. One round of stroke play to determine seeds, then an eight-player match play event. The golf was played on six holes, with a par of 22. The signature pine anchored us, and played defense at the perfect times.</p>
+    <p>The people brought the vibes. We lived, laughed, and loved through the ups and downs of competition, from the football, to the course, to the fire.</p>
+    <p>The pressure built as the day went on, but...</p>
+    <div class="champ">
+      <div class="txt">
+        <div class="label">Inaugural Champion</div>
+        <div class="name">Derek</div>
+      </div>
+      <button class="thumb" type="button" aria-label="Enlarge the final bracket" onclick="document.getElementById('lb').classList.add('on')">
+        <img src="images/recap-bracket.jpg" alt="The finished Invitational bracket with Derek as champion">
+      </button>
+    </div>
+    <div class="lightbox" id="lb" onclick="this.classList.remove('on')">
+      <img src="images/recap-bracket.jpg" alt="The finished Invitational bracket with Derek as champion">
+    </div>
+    <p style="margin-top:22px">We all knew who was going to win....Sorry 'bout it!!</p>
+    <p>See you all next year! Thanks for making this event one of a kind.</p>
+  </article>
+
+  <hr class="rule">
+  <footer>
+    <a class="btn" href="index.html">Back to the Course</a>
+    <div class="script">The Meadows</div>
+  </footer>
+
+</div>
+</body>
+</html>
