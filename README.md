@@ -7,6 +7,7 @@ Backyard short-game golf: six holes, one club, plenty of banter. This is the cou
 - **Guide** – the Invitational golf guide: welcome, the course (yards, par, map), one club, the four rules, etiquette and care, scoring.
 - **Scorecard** – add up to 8 players, score hole by hole, pick a club for the round. The card on screen matches the printed Invitational card (yards, par, player rows, total). Tap any cell to jump to that hole.
 - **Leaderboard** – every saved round ranks by score to par. Tap a row for the date, club and hole-by-hole scores.
+- **Invitational** – the recap of the Inaugural Invitational (October 17, 2026): group photo, the story, and the final bracket (tap it to enlarge).
 
 Par 22 · 350 yards · Foam balls can still break windows.
 
@@ -15,7 +16,7 @@ Par 22 · 350 yards · Foam balls can still break windows.
 | File | What it is |
 | --- | --- |
 | `index.html` | The whole app |
-| `images/` | Logo and course map |
+| `images/` | Logo, course map, and Invitational photos |
 | `icons/`, `manifest.webmanifest` | iPhone home screen icon and app name |
 | `supabase-setup.sql` | One-time database setup for the live leaderboard |
 | `rounds.json` | Fallback shared leaderboard when no database is connected |

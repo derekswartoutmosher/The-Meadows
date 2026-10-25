@@ -42,8 +42,12 @@ button{font-family:var(--body);cursor:pointer}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .btn.block{width:100%}
 .row{display:flex;gap:8px;align-items:center}
-.row > *{flex:1}
+.row > *{flex:1;min-width:0}
 .row > .fit{flex:0 0 auto}
+/* iPhone date field: stop Safari's native sizing from overflowing the box */
+input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-width:0;max-width:100%;height:46px;line-height:1.2;text-align:left}
+input[type=date]::-webkit-date-and-time-value{text-align:left;margin:0;min-height:1.2em}
+input[type=date]::-webkit-calendar-picker-indicator{margin-left:auto}
 .stack > * + *{margin-top:12px}
 
 /* bottom nav */
@@ -116,6 +120,30 @@ td.s{font-family:var(--head);font-weight:600;font-size:17px}
 
 .pagelogo{text-align:center;margin:0 0 8px}
 .pagelogo img{width:120px;height:auto}
+
+/* invitational recap */
+.inv{padding-bottom:8px}
+.inv-head{text-align:center;padding:6px 0 0}
+.inv-head img{width:120px;height:auto;display:block;margin:0 auto 2px}
+.inv-script{font-family:var(--script);font-size:30px;color:var(--wood);line-height:1}
+.inv h1{font-family:var(--head);font-weight:700;font-size:clamp(30px,8.5vw,44px);line-height:1.1;margin:8px 0 12px;color:var(--pine)}
+.inv-meta{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--wood)}
+.inv-photo{margin:24px auto 0;max-width:480px}
+.inv-photo img{display:block;width:100%;height:auto;border-radius:6px;border:6px solid #fbf7ec;box-shadow:0 2px 14px rgba(35,56,35,.18)}
+.inv-body{margin-top:30px;font-size:17px;line-height:1.7}
+.inv-body p{margin:0 0 14px}
+.inv-champ{margin:30px 0 0;background:var(--pine);color:var(--cream);border-radius:8px;padding:18px 16px;display:flex;align-items:center;gap:14px}
+.inv-champ .txt{flex:1 1 0;min-width:0}
+.inv-champ .lab{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#cdbf9a;line-height:1.5}
+.inv-champ .nm{font-family:var(--head);font-weight:700;font-size:clamp(30px,8vw,40px);line-height:1.1;margin-top:6px}
+.inv-champ .thumb{flex:0 0 52%;max-width:280px;border:0;padding:0;background:none;cursor:zoom-in;display:block}
+.inv-champ .thumb img{display:block;width:100%;height:auto;border-radius:4px;border:3px solid #fbf7ec}
+.inv-foot{text-align:center;border-top:1px solid var(--line);margin-top:34px;padding:26px 0 10px}
+.inv-foot .btn{display:inline-block;border-radius:999px;font-family:var(--head);padding:12px 26px}
+.inv-foot .inv-script{margin-top:14px}
+.lightbox{position:fixed;inset:0;background:rgba(20,30,20,.92);display:none;align-items:center;justify-content:center;padding:14px;z-index:30;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:4px}
 
 /* printed-style card */
 .pcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 12px 10px;margin-bottom:14px}
@@ -206,10 +234,12 @@ td.s{font-family:var(--head);font-weight:600;font-size:17px}
   <div class="tag">Six holes. One club. Plenty of banter.</div>
 </header>
 <main id="app"></main>
+<div class="lightbox" id="lb"><img src="images/invitational-bracket.jpg" alt="The finished Invitational bracket with Derek as champion"></div>
 <nav>
   <button data-tab="guide">Guide</button>
   <button data-tab="play" class="on">Scorecard</button>
   <button data-tab="board">Leaderboard</button>
+  <button data-tab="inv">Invitational</button>
 </nav>
 
 <script>
@@ -416,6 +446,22 @@ function cardHtml(){
   return h;
 }
 
+function viewInvitational(){
+  return '<div class="inv">'+
+  '<div class="inv-head"><img src="images/logo.png" alt=""><div class="inv-script">The Meadows</div><h1>The Inaugural Invitational</h1><div class="inv-meta">Saturday \u00b7 October 17, 2026 \u00b7 Ann Arbor</div></div>'+
+  '<figure class="inv-photo" style="margin-left:auto;margin-right:auto"><img src="images/invitational-group.jpg" alt="The Invitational group photo"></figure>'+
+  '<div class="inv-body">'+
+  '<p>It was a beautiful fall Saturday in October. A light frost on the ground when the day began, and a crisp football air to set the stage for the first-ever Meadows Invitational.</p>'+
+  '<p>Nine players. One round of stroke play to determine seeds, then an eight-player match play event. The golf was played on six holes, with a par of 22. The signature pine anchored us, and played defense at the perfect times.</p>'+
+  '<p>The people brought the vibes. We lived, laughed, and loved through the ups and downs of competition, from the football, to the course, to the fire.</p>'+
+  '<p>The pressure built as the day went on, but...</p>'+
+  '<div class="inv-champ"><div class="txt"><div class="lab">Inaugural Champion</div><div class="nm">Derek</div></div>'+
+    '<button class="thumb" type="button" data-lb="1" aria-label="Enlarge the final bracket"><img src="images/invitational-bracket.jpg" alt="The finished Invitational bracket with Derek as champion"></button></div>'+
+  '<p style="margin-top:22px">We all knew who was going to win....Sorry \u2019bout it!!</p>'+
+  '<p>See you all next year! Thanks for making this event one of a kind.</p></div>'+
+  '<div class="inv-foot"><button class="btn" data-goto="guide">Back to the Course</button><div class="inv-script">The Meadows</div></div></div>';
+}
+
 function viewGuide(){
   var yTot=HOLES.reduce(function(a,h){return a+h.yd;},0);
   var blurbs={'Gap Wedge':'All spin, all touch. Less distance, but you can check it up and work it soft around the hole.',
@@ -551,7 +597,7 @@ function viewBoard(){
 /* ---------- Render + events ---------- */
 var app=document.getElementById('app');
 function render(){
-  app.innerHTML = tab==='guide'?viewGuide(): tab==='board'?viewBoard(): viewPlay();
+  app.innerHTML = tab==='guide'?viewGuide(): tab==='board'?viewBoard(): tab==='inv'?viewInvitational(): viewPlay();
   document.querySelectorAll('nav button').forEach(function(b){ b.classList.toggle('on',b.dataset.tab===tab); });
 }
 document.querySelector('nav').addEventListener('click',function(e){
@@ -564,6 +610,7 @@ app.addEventListener('click',function(e){
   if(t.id!=='clearD') confirmClear=false;
   if(t.id!=='saveR') confirmPartial=false;
   if(t.dataset.jump){ var jt=document.getElementById(t.dataset.jump); if(jt) jt.scrollIntoView({behavior:'smooth',block:'start'}); return; }
+  if(t.dataset.lb){ document.getElementById('lb').classList.add('on'); return; }
   if(t.dataset.goto){ tab=t.dataset.goto; window.scrollTo(0,0); render(); return; }
   if(t.dataset.cell){ var cp=t.dataset.cell.split(','); draft.hole=+cp[1]; persistDraft(); render(); var rows=document.querySelectorAll('.prow'); if(rows[+cp[0]]) rows[+cp[0]].scrollIntoView({behavior:'smooth',block:'center'}); return; }
   if(t.id==='addp'){ var i=document.getElementById('pn'); addPlayer(i.value); var n=document.getElementById('pn'); if(n) n.focus(); return; }
@@ -597,6 +644,8 @@ app.addEventListener('keydown',function(e){
   if(e.key==='Enter'&&e.target.id==='pinIn'){ e.preventDefault(); if(pinFor) deleteRemote(pinFor); return; }
   if(e.key==='Enter'&&e.target.id==='pn'){ e.preventDefault(); addPlayer(e.target.value); var n=document.getElementById('pn'); if(n) n.focus(); }
 });
+
+document.getElementById('lb').addEventListener('click',function(){ this.classList.remove('on'); });
 
 var toastT;
 function toast(msg){
